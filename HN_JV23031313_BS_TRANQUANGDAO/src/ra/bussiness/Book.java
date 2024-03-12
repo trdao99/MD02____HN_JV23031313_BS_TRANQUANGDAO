@@ -190,10 +190,11 @@ public class Book {
             System.out.println("________________________________");
         }
     }
-    public void sortInteres(){
-        for (int i = 0; i < lenght -1; i++) {
-            for (int j = i+1; j < lenght ; j++) {
-                if(listBooks[i].getInterest()<listBooks[j].getInterest()){
+
+    public void sortInteres() {
+        for (int i = 0; i < lenght - 1; i++) {
+            for (int j = i + 1; j < lenght; j++) {
+                if (listBooks[i].getInterest() > listBooks[j].getInterest()) {
                     Book compe = listBooks[i];
                     listBooks[i] = listBooks[j];
                     listBooks[j] = compe;
@@ -219,12 +220,12 @@ public class Book {
         }
     }
 
-    public void findBook(){
-        Scanner sc =new Scanner(System.in);
+    public void findBook() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("nhập tên sách muốn tìm");
         String nameFind = sc.nextLine();
         for (int i = 0; i < lenght; i++) {
-            if(listBooks[i].getBookName().equals(nameFind)){
+            if (listBooks[i].getBookName().equals(nameFind)) {
                 System.out.println("id sách: " + listBooks[i].getBookId() + " | " +
                         "tên sách: " + listBooks[i].getBookName() + " | " +
                         "tên tác giả: " + listBooks[i].getAuthor() + " | " +
@@ -239,12 +240,12 @@ public class Book {
         }
     }
 
-    public void change(){
-        Scanner sc =new Scanner(System.in);
+    public void change() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("nhập mã sách muốn thay ");
         int id = Integer.parseInt(sc.nextLine());
         for (int i = 0; i < lenght; i++) {
-            if(listBooks[i].getBookId() == id){
+            if (listBooks[i].getBookId() == id) {
                 while (true) {
                     System.out.println("nhập tên sách: ");
                     String name = sc.nextLine();
